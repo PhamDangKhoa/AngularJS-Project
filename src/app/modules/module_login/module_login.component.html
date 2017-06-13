@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-sm-offset-3 col-md-offset-3 col-sm-6 col-md-6">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form method="post" class="form-horizontal" #form_dang_nhap="ngForm" (ngSubmit)="gui_form_dang_nhap()" >
+                <div class="form-group">
+                    <label class="control-label " for="txtTaiKhoan">Account:</label>
+                    <div >
+                    <input name="ten_dang_nhap" required="true" #ten_dang_nhap="ngModel" [(ngModel)]="nguoi_dung.ten_dang_nhap" type="text" class="form-control" id="txtTaiKhoan" placeholder="Account">
+                    <div class="thong_bao_loi" *ngIf="ten_dang_nhap.invalid&&!ten_dang_nhap.pristine" >
+                        Please type your account
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label " for="txtMatKhau">Password:</label>
+                    <div> 
+                    <input name="mat_khau" required="true" #mat_khau="ngModel" [(ngModel)]="nguoi_dung.mat_khau" type="password" class="form-control" id="txtMatKhau" placeholder="Password">
+                    <div class="thong_bao_loi" *ngIf="mat_khau.invalid&&!mat_khau.pristine" >
+                        Please type your password
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group"> 
+                    <div>
+                    <button [disabled]="!form_dang_nhap.form.valid" type="submit" class="btn btn-default">Login</button><br><br>
+                    
+                    <h3 id="thong_bao" (click)="hien_thi_ket_qua()" ng-value="thong_bao"><span class="label label-success" >{{thong_bao}}</span></h3>
+                    
+                    </div>
+                    
+                </div>       
+                
+            </form>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

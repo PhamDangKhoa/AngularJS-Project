@@ -1,0 +1,77 @@
+<div class="row" style="margin:20px auto;">
+    <div class=" col-sm-12 col-md-12">
+        <div class="main_bg">
+        <div class="wrap">
+           <div class="main">
+              <div class="contact">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="contact_info">
+                        <h2>LOCATION:</h2>
+                        <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.629034633842!2d106.67994971422614!3d10.763046692330612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1eaacae6dd%3A0xeaf52859c6ff873c!2zVHJ1bmcgdMOibSBUaW4gaOG7jWMgLSDEkOG6oWkgaOG7jWMgS2hvYSBo4buNYyBU4buxIG5oacOqbg!5e0!3m2!1sja!2sjp!4v1493690100909" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                        </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-offset-1 col-md-4">
+                        <div class="contact_info">
+                        <h3>OUR INFOMATION:</h3>
+                        Trung tâm tin học- Đại học khoa học tự nhiên<br>
+                        227-Nguyễn Văn Cừ-Quận 5-Hồ Chí Minh-Việt Nam<br>
+                        Điện thoại:38351056-Fax:38324466<br>
+                        Giờ làm việc: 7:30->17:00
+                      </div>
+                    </div>
+                  </div>
+                <div class="row">
+                    <div class="col-sm-offset-3 col-md-offset-3 col-sm-6 col-md-6">
+                        <div class="contact-form"> 
+                        <br><h2>CONTACT:</h2>
+                        <form action="" method="POST" role="form">
+                            <div class="form-group">
+                                <label for="txtHoTen">Full Name:</label>
+                                 <input required="true" name="ho_ten" #ho_ten="ngModel" [(ngModel)]="nguoi_dung.ho_ten" type="text" class="form-control" id="txtHoTen" placeholder="Full name">
+                                <div class="thong_bao_loi" *ngIf="ho_ten.invalid&&!ho_ten.pristine" >
+                                    Please type your full name
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtEmail">Email:</label>
+                                <input name="email" required="true" pattern="\S+@\S+\.\S+" #email="ngModel" [(ngModel)]="nguoi_dung.email" type="email" class="form-control" id="txtEmail" placeholder="Email">
+                                <div *ngIf="email.invalid&&!email.pristine" >
+                                    <div class="thong_bao_loi" *ngIf="email.errors.required" >
+                                        please type your email
+                                    </div>
+                                    <div class="thong_bao_loi" *ngIf="email.errors.pattern">
+                                        This email is invalid
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtDienThoai">Phone number:</label>
+                                <input name="so_dien_thoai" required="true" #so_dien_thoai="ngModel" [(ngModel)]="nguoi_dung.so_dien_thoai" type="text" class="form-control" id="txtSoDienThoai" placeholder="Phone number">
+                                <div class="thong_bao_loi" *ngIf="so_dien_thoai.invalid&&!so_dien_thoai.pristine" >
+                                    Please type your phone number
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="txtTinNhan">Message</label>
+
+                                <textarea col="5" row="3" required="true" name="noi_dung_lien_he" #noi_dung_lien_he="ngModel" [(ngModel)]="lien_he.noi_dung_lien_he" class="form-control" row="3" id="txtTinNhan" placeholder="Message"></textarea>
+                                <div class="thong_bao_loi" *ngIf="noi_dung_lien_he.invalid&&!noi_dung_lien_he.pristine" >
+                                    Please type the message
+                                </div>
+                            </div>
+                            <button (click)="hien_thi_thong_bao()" type="submit" class="btn btn-primary">Send to us</button>
+                                <h3 id="thong_bao"  ng-value="thong_bao" style="margin-top:20px;"><span class="label label-success" >{{thong_bao}}</span></h3>
+                        </form>
+                        </div>
+                  </div>
+                </div>
+                 <div class="clear"></div>
+              </div>
+           </div>
+        </div>
+         </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+    <div class="slider-area">
+        <div class="zigzag-bottom"></div>
+        <div id="slide-list" class="carousel carousel-fade slide" data-ride="carousel">
+            
+
+            <div class="carousel-inner" role="listbox">
+                <div  *ngFor="let slider of slider_array; let i=index" [@slide_banner]="slider.trang_thai" class=" {{(slider.trang_thai==1)?'item active':'item'}}" >
+                    <div class="single-slide"  >
+                        <div class="slide-bg" >
+                            <img src="img/{{slider.hinh}}" style="width:100%"/>
+                        </div>
+                        <div class="slide-text-wrapper">                            
+                            <div class="slide-text">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-6">
+                                            <div class="slide-content">
+                                                <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">{{slider.title}}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+        </div>        
+    </div> <!-- End slider area -->
+
+    

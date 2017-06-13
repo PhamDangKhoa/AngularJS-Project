@@ -1,0 +1,42 @@
+<div class="brands-area"  (window:resize)="getSlideNumber()">
+   <div class="zigzag-bottom"></div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="brand-wrapper">
+               <h2 class="section-title">Brands</h2>
+               <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+                  <!-- Wrapper for slides: Khai báo các hình ảnh trong các slide -->
+                  <div class="carousel-inner" role="listbox">
+                     <div *ngFor="let brander of brander_array;let i=index;"  ng-value="vitri" ng-value="so_slide" class="item {{ (i>=vitri)&&(i<vitri+so_slide)?'active':'' }}">
+                        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                           <img  src="img/{{brander.image}}" alt="{{brander.image}}">
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Left and right controls: tạo nút di chuyển lùi, tới -->
+                  <a (click)="prev()" class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ></span>
+                  <span class="sr-only">Previous</span>
+                  </a>
+                  <a (click)="next()" class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+                  <span class="sr-only">Next</span>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End brands area -->
+
+
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                                                        

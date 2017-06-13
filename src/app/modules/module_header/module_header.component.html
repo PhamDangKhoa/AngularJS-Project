@@ -1,0 +1,90 @@
+<div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="user-menu">
+                        <ul>
+                            <li><a id="my_account" (click)="hien_thi_nguoi_dung()" ng-value="user_login" ><i class="fa fa-user"></i>{{user_login.ten_dang_nhap}}</a></li>
+                            <!--<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>-->
+                            <li><a [routerLink]="['/giohang']" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-user"></i> My Cart</a></li>
+                            <li><a [routerLink]="['/thanhtoan']" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-user"></i> Checkout</a></li>
+                            <li><a [routerLink]="['/dangnhap']" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}"><i class="fa fa-user"></i> Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="header-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">USD</a></li>
+                                    <li><a href="#">INR</a></li>
+                                    <li><a href="#">GBP</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown dropdown-small">
+                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">French</a></li>
+                                    <li><a href="#">German</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div> <!-- End header area -->
+    <div class="site-branding-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="logo">
+                        <h1><a style="background:none" [routerLink]="['']" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}">e<span>Electronics</span></a></h1>
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a style="background:none" [routerLink]="['/giohang']" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}">Cart - <span class="cart-amunt" ng-value="total" >{{total}}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count" ng-value="number_item">{{number_item}}</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End site branding area -->
+    
+    <div class="mainmenu-area">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div> 
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li *ngFor="let menu of array_menu ; let i = index" >
+                            <a [routerLink]="['/' + menu.link]" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}" (mouseover)="hien_thi_menu(menu.id)" (mouseout)="an_menu(menu.id)" >{{ menu.ten_menu }}</a>
+                            <ul *ngIf="menu.id==2"  class="menu_con" [@hieu_ung_menu]="menu.trang_thai" (mouseover)="hien_thi_menu(menu.id)">
+							    <li *ngFor="let loai of ds_loai" >
+                                    <span [routerLink]="['/' + menu.link,loai]" routerLinkActive="trang_hien_tai" [routerLinkActiveOptions]="{exact:true}" (click)="thay_doi_loai_san_pham()" >{{loai}}</span>
+							   
+							    </li>							
+					        </ul>
+                        </li>
+
+                    </ul>
+                </div>  
+            </div>
+        </div>
+    </div> <!-- End mainmenu area -->
+    <div id="thay_doi_gio_hang" style="display: none;" (click)="thay_doi_gio_hang()"></div>
+
+    <!--<input name="ten_dang_nhap" required="true" #ten_dang_nhap="ngModel" [(ngModel)]="nguoi_dung.ten_dang_nhap" type="text" class="form-control" id="txtTaiKhoan" placeholder="Tài khoản">-->

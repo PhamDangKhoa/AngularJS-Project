@@ -1,0 +1,209 @@
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+  .trang_hien_tai{
+    background: rgba(0, 0, 0, 0.3)
+  }
+
+.register-form{
+  width: 90%;
+}
+.login-form{
+  width: 90%;
+}
+
+.register-form h2{
+  margin-top: 20px;
+  color: #1abc9c;
+}
+.login-form h2{
+  margin-top: 20px;
+  color: #1abc9c;
+}
+
+  .form-horizontal{
+    margin:auto;
+  }
+ 
+input{
+  transition: all ease 0.5s;
+}
+
+  input.ng-invalid{
+    border: 1px solid red!important;
+    border-left: 5px solid red!important;
+  }
+
+  input.ng-valid{
+    border: 1px solid #1abc9c!important;
+    border-left: 5px solid #1abc9c!important;
+  }
+
+  input.ng-pristine{
+    border: 1px solid #1abc9c!important;
+    border-left: 5px solid #1abc9c!important;
+  }
+
+
+  .thong_bao_loi{
+    color: red;
+    font-weight: bold;
+    padding: 10px!important;
+    margin: 10px;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.2)
+  }
+  .thong_bao_loi_1{
+    color: red;
+    font-weight: bold;
+    padding: 10px!important;
+    margin: 10px;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.2)
+  }
+  .thong_bao_loi_2{
+    color: red;
+    font-weight: bold;
+    padding: 10px!important;
+    margin: 10px;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.2)
+  }
+
+.form_chat{
+	position: fixed;
+	right: 0;
+	bottom: -320px;
+	background: #fff;
+  z-index: 1000;
+}
+.shopping-item{
+	position: fixed;
+	right: 10px;
+  top:0px;
+  z-index: 1000;
+  background:#e1e1d0;
+}
+
+.tieu_de{
+	background: #ff4d4d;
+	border-bottom: 1px solid #ff8800;
+	font-family: Arial;
+	color: #fff;
+	padding: 10px 20px;
+}
+
+.div_chua_noi_dung{
+	height: 250px;
+	width: 300px;
+	border: 1px solid #ccc;
+	margin: 5px;
+	overflow-y: auto;
+}
+
+.ds_chat{
+	padding: 5px;
+}
+
+.item_noi_dung_chat{
+	float: right;
+	padding: 5px;
+	background: #ccc;
+	border-radius: 20px 20px 0 20px;
+	margin: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.item_noi_dung_chat_2{
+	float: left;
+	padding: 5px;
+	background: #aaffff;
+	border-radius: 20px 20px 20px 0;
+	margin: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_nhap{
+	width: 300px;
+	margin: 5px;
+}
+
+.form_nhap textarea{
+	width: 100%;
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+  right: 0;  
+  margin-right: 0;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+  left: 0; 
+  margin-left: 0;
+}
+
+body::before {
+  display: none;
+  content: "small";
+}
+
+@media only screen and (min-width: 54em) {
+  body::before {
+    content: "medium"; 
+  } 
+}
+
+@media only screen and (min-width: 84em) {
+  body::before {
+    content: "large"; 
+  } 
+}
+
+
+.carousel-control.left{
+  width: 100px;
+  margin-left: -50px;
+}
+
+.carousel-control.right{
+  width: 100px;
+  margin-right: -50px;
+}
+.row {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+h2 {
+    height: 50px;
+}
+
+.related-products-wrapper {
+    margin-left: 100px;
+}
+
+li.product {
+  margin-bottom: 20px;
+}
+
+.contact_info h2,h3{
+  color: #1abc9c;
+}
+.contact-form h2{
+  color: #1abc9c;
+}
+
+.menu_con{
+  list-style-type: none;
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  background: #1abc9c;
+  overflow: hidden;
+}
+.menu_con span{
+  color: white;
+  font-size: 18px;
+}

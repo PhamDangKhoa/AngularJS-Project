@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-12">
+    <h2 class="section-title">Latest product</h2>
+   <div class="carousel slide" data-ride="carousel" (window:resize)="getSlideNumber()">
+      <div class="carousel-inner">
+         <div  *ngFor="let value of lasted_product_array;let i=index;" ng-value="vitri" ng-value="so_slide" class="item {{ (i>=vitri)&&(i<vitri+so_slide)?'active':'' }}">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+               <div class="single-product" >
+                  <div class="product-f-image">
+                     <img src="img/{{value.hinh_san_pham}}" style="height:300px;" alt="">
+                     <div class="product-hover">
+                        <a class="add-to-cart-link" ><span (click)="dat_hang(value.ma)" ><i  class="fa fa-shopping-cart"></i> Add to cart</span></a>
+                        <a [routerLink]="['/chitiet',value.ma]" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                     </div>
+                  </div>
+                  <h2><a [routerLink]="['/chitiet',value.ma]">{{value.ten_san_pham}}</a></h2>
+                  <div class="product-carousel-price">
+                     <ins>{{value.don_gia}} VNĐ</ins>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <a (click)="prev()" class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a (click)="next()" class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+   </div>
+</div>

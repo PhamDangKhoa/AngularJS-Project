@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-sm-offset-3 col-md-offset-3 col-sm-6 col-md-6">
+        <div class="register-form">
+            <h2>Register</h2>
+            <form method="post" class="form-horizontal" #form_dang_ky="ngForm" (ngSubmit)="gui_form_dang_ky()" >
+                <div class="form-group">
+                    <label class="control-label " for="txtHoTen">Full Name:</label>
+                    <div >
+                    <input required="true" name="ho_ten" #ho_ten="ngModel" [(ngModel)]="nguoi_dung.ho_ten" type="text" class="form-control" id="txtHoTen" placeholder="Full name">
+                    <div class="thong_bao_loi" *ngIf="ho_ten.invalid&&!ho_ten.pristine" >
+                        Please type your full name.
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label " for="txtTaiKhoan">Account:</label>
+                    <div >
+                    <input name="ten_dang_nhap" required="true" #ten_dang_nhap="ngModel" [(ngModel)]="nguoi_dung.ten_dang_nhap" type="text" class="form-control" id="txtTaiKhoan" placeholder="Your account">
+                    <div class="thong_bao_loi" *ngIf="ten_dang_nhap.invalid&&!ten_dang_nhap.pristine" >
+                        Please type your account
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label " for="txtMatKhau">Password:</label>
+                    <div > 
+                    <input name="mat_khau" required="true" #mat_khau="ngModel" [(ngModel)]="nguoi_dung.mat_khau" type="password" class="form-control" id="txtMatKhau" placeholder="Password">
+                    <div class="thong_bao_loi" *ngIf="mat_khau.invalid&&!mat_khau.pristine" >
+                        Please type you password
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label " for="txtEmail">Email:</label>
+                    <div >
+                    <input name="email" required="true" pattern="\S+@\S+\.\S+" #email="ngModel" [(ngModel)]="nguoi_dung.email" type="email" class="form-control" id="txtEmail" placeholder="Email">
+                    <div *ngIf="email.invalid&&!email.pristine" >
+                        <div class="thong_bao_loi" *ngIf="email.errors.required" >
+                            Please type your email
+                        </div>
+                        <div class="thong_bao_loi" *ngIf="email.errors.pattern">
+                            Email address is invalid
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label " for="txtSoDienThoai">Phone number:</label>
+                    <div >
+                    <input name="so_dien_thoai" required="true" #so_dien_thoai="ngModel" [(ngModel)]="nguoi_dung.so_dien_thoai" type="text" class="form-control" id="txtSoDienThoai" placeholder="Phone number">
+                    <div class="thong_bao_loi" *ngIf="so_dien_thoai.invalid&&!so_dien_thoai.pristine" >
+                        Please type your phone number
+                    </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label " for="txtNoiSinh">Birth place:</label>
+                    <div >
+                    <input #noi_sinh="ngModel" name="noi_sinh" [(ngModel)]="nguoi_dung.noi_sinh" type="text" class="form-control" id="txtNoiSinh" placeholder="Birth Place">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label " for="txtNgaySinh">Birth day:</label>
+                    <div >
+                    <input #ngay_sinh="ngModel" name="ngay_sinh" [(ngModel)]="nguoi_dung.ngay_sinh" type="date" class="form-control" id="txtNgaySinh" placeholder="Birth Day">
+                    </div>
+                </div>
+                <div class="form-group"> 
+                    <div>
+                    <button [disabled]="!form_dang_ky.form.valid" type="submit" class="btn btn-default">Register</button>
+                    <h3 id="thong_bao" (click)="hien_thi_ket_qua()" ng-value="thong_bao" style="margin-top:20px;"><span class="label label-success" >{{thong_bao}}</span></h3>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+
+
+
+

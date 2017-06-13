@@ -1,0 +1,30 @@
+                <div class="col-md-4">
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Search Products</h2>
+                        <form #form_search_product="ngForm" (ngSubmit)="search_product()">
+                            <input type="text" id="ten_san_pham" placeholder="Search products...">
+                            <input type="submit" value="Search">
+                        </form>
+                    </div>
+                    
+                    <div class="single-sidebar" *ngIf="search_product_array.length!=0">
+                        <h2 class="sidebar-title">Products</h2>
+                        <div class="thubmnail-recent" *ngFor="let value of search_product_array">
+                            <img src="img/{{value.hinh_san_pham}}" style="height: 50px;" class="recent-thumb" alt="">
+                            <h2><a [routerLink]="['/chitiet',value.ma]" (click)="thay_doi_chi_tiet_san_pham()" >{{value.ten_san_pham}}</a></h2>
+                            <div class="product-sidebar-price">
+                                <ins>{{value.don_gia}} VNĐ</ins>
+                            </div>                             
+                        </div>
+                    </div>
+                    
+                    <div class="single-sidebar">
+                        <h2 class="sidebar-title">Recent Posts</h2>
+                        <ul>
+                            <li *ngFor="let value of recent_post_product_array">
+                                <a [routerLink]="['/chitiet',value.ma]" (click)="thay_doi_chi_tiet_san_pham()">{{value.ten_san_pham}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>

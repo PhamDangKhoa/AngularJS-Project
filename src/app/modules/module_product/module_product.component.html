@@ -1,0 +1,42 @@
+<div class="product-big-title-area" id="thay_doi_loai_san_pham" (click)="thay_doi_loai_san_pham()" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>{{(ten_loai==null)?'Shop':ten_loai}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6" *ngFor="let value of product_array | paginate: {itemsPerPage:8,currentPage:p}">
+                    <div class="single-shop-product">
+                        <div class="product-upper">
+                            <img src="img/{{value.hinh_san_pham}}" style="height:200px;" alt="">
+                        </div>
+                        <h2><a [routerLink]="['/chitiet',value.ma]">{{value.ten_san_pham}}</a></h2>
+                        <div class="product-carousel-price">
+                            <ins>{{value.don_gia}} VNĐ</ins>
+                        </div>  
+                        
+                        <div class="product-option-shop">
+                            <a  (click)="dat_hang(value.ma)" class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow">Add to cart</a>
+                        </div>                       
+                    </div>
+                </div> 
+                <div class="clear"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12" >
+                   <pagination-controls (pageChange)="p=$event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>

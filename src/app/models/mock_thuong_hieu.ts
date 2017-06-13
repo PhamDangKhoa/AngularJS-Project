@@ -1,0 +1,52 @@
+import { ThuongHieu } from "./thuong_hieu";
+export var ds_thuong_hieu:ThuongHieu[]=[
+    {
+        id:1,
+        image:"services_logo__1.jpg",
+    },
+    {
+        id:2,
+        image:"services_logo__2.jpg",
+    },
+    {
+        id:3,
+        image:"services_logo__3.jpg",
+    },
+    {
+        id:4,
+        image:"services_logo__4.jpg",
+    },
+    {
+        id:5,
+        image:"services_logo__3.jpg",
+    },
+    {
+        id:6,
+        image:"services_logo__2.jpg",
+    },
+    {
+        id:7,
+        image:"services_logo__1.jpg",
+    },
+    {
+        id:8,
+        image:"services_logo__4.jpg",
+    },
+    {
+        id:9,
+        image:"services_logo__1.jpg",
+    },
+    {
+        id:10,
+        image:"services_logo__4.jpg",
+    },
+    {
+        id:11,
+        image:"services_logo__2.jpg",
+    },
+    {
+        id:12,
+        image:"services_logo__3.jpg",
+    },
+    
+]
